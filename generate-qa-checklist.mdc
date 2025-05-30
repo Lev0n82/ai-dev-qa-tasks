@@ -1,0 +1,27 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Generate QA Checklist
+
+## Goal
+Create a detailed QA checklist for a specific feature based on its PRD and task list.
+
+## Process
+1. Determine the feature type (API, UI, DB, etc.) and highlight unique QA risks.
+2. Include checklist items for:
+   - Unit tests (>=90% coverage)
+   - Integration tests (>=80% coverage)
+   - At least one end-to-end test for each user flow
+   - Accessibility audit using axe-core, Lighthouse, or pa11y (score must be 90 or higher)
+   - Security scans with OWASP ZAP or Snyk
+   - Rate limit enforcement
+   - Invalid input handling
+   - File upload validation
+   - Logging and error handling
+3. Provide manual test steps and expected results.
+4. Leave fields for the reviewer name and date.
+
+## Output Format
+The checklist should be saved as `[feature-name]-qa-checklist.md` in the `/tasks/` directory.
