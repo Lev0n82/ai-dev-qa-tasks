@@ -94,6 +94,8 @@ After merging your changes, run `qa-regression-builder.mdc` to analyze recent lo
 *   **`generate-tasks.mdc`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
 *   **`process-task-list.mdc`**: Instructs the AI on how to process the generated task list, tackling one task at a time and waiting for your approval before proceeding. (This file also contains logic for the AI to mark tasks as complete).
 *   **`qa-regression-builder.mdc`**: After a merge, parse logs for repeated errors and suggest regression tests or new tasks.
+*   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
+main
 
 ## 🌟 Benefits
 
@@ -117,6 +119,17 @@ After merging your changes, run `qa-regression-builder.mdc` to analyze recent lo
 *   **MAX Mode for PRDs:** As mentioned, using MAX mode in Cursor for PRD creation (`create-prd.mdc`) can yield more thorough and higher-quality results if your budget supports it.
 *   **Correct File Tagging:** Always ensure you're accurately tagging the PRD filename (e.g., `@MyFeature-PRD.md`) when generating tasks.
 *   **Patience and Iteration:** AI is a powerful tool, but it's not magic. Be prepared to guide, correct, and iterate. This workflow is designed to make that iteration process smoother.
+## QA Report Generation & Traceability
+
+Use `scripts/generate_qa_summary.py` to produce a `qa-summary.md` for each PR. Provide the task list file, QA reviewer names, test coverage results, bug information, and CI/CD log URL. Commit the generated summary for audit purposes.
+```bash
+python3 scripts/generate_qa_summary.py --tasks-file tasks-example.md 
+    --qa-reviewers "Alice,Bob" --test-coverage coverage.txt 
+    --bugs-fixed bugs.txt --cicd-log-url https://link.to/logs
+```
+This creates `qa-summary.md`.
+
+
 
 ## 🤝 Contributing
 
