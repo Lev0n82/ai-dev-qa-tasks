@@ -1,0 +1,17 @@
+{
+  "name": "devops-user-lookup-extension",
+  "version": "0.1.0",
+  "description": "Azure DevOps User Lookup Extension",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  }
+}

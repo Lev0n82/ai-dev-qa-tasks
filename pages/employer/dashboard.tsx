@@ -228,11 +228,38 @@ export default function EmployerDashboard() {
                   {mockInterviews
                     .filter(interview => interview.status === 'in_progress')
                     .map((interview) => (
-                      // Same card component as above
                       <Grid item xs={12} md={6} lg={4} key={interview.id}>
                         <Card>
                           <CardContent>
-                            {/* Same content structure */}
+                            <Box sx={{ mb: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                              <Typography variant="h6" component="h2" gutterBottom>
+                                {interview.title}
+                              </Typography>
+                              <Chip
+                                size="small"
+                                label={interview.status.replace('_', ' ')}
+                                color={getStatusColor(interview.status)}
+                                icon={getStatusIcon(interview.status)}
+                              />
+                            </Box>
+                            
+                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                              <PersonIcon fontSize="small" sx={{ mr: 1 }} />
+                              <Typography variant="body2">
+                                {interview.candidateName}
+                              </Typography>
+                            </Box>
+                            
+                            <Typography variant="body2" color="text.secondary" gutterBottom>
+                              Position: {interview.position}
+                            </Typography>
+                            
+                            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                              <AccessTimeIcon fontSize="small" sx={{ mr: 1 }} />
+                              <Typography variant="body2" color="text.secondary">
+                                Deadline: {new Date(interview.deadline).toLocaleDateString()}
+                              </Typography>
+                            </Box>
                           </CardContent>
                           <CardActions>
                             <Button 
@@ -253,11 +280,38 @@ export default function EmployerDashboard() {
                   {mockInterviews
                     .filter(interview => interview.status === 'completed')
                     .map((interview) => (
-                      // Same card component as above
                       <Grid item xs={12} md={6} lg={4} key={interview.id}>
                         <Card>
                           <CardContent>
-                            {/* Same content structure */}
+                            <Box sx={{ mb: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                              <Typography variant="h6" component="h2" gutterBottom>
+                                {interview.title}
+                              </Typography>
+                              <Chip
+                                size="small"
+                                label={interview.status.replace('_', ' ')}
+                                color={getStatusColor(interview.status)}
+                                icon={getStatusIcon(interview.status)}
+                              />
+                            </Box>
+                            
+                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                              <PersonIcon fontSize="small" sx={{ mr: 1 }} />
+                              <Typography variant="body2">
+                                {interview.candidateName}
+                              </Typography>
+                            </Box>
+                            
+                            <Typography variant="body2" color="text.secondary" gutterBottom>
+                              Position: {interview.position}
+                            </Typography>
+                            
+                            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                              <AccessTimeIcon fontSize="small" sx={{ mr: 1 }} />
+                              <Typography variant="body2" color="text.secondary">
+                                Deadline: {new Date(interview.deadline).toLocaleDateString()}
+                              </Typography>
+                            </Box>
                           </CardContent>
                           <CardActions>
                             <Button 
