@@ -1,0 +1,41 @@
+{
+  "name": "devops-user-lookup-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension for DevOps user lookup functionality in Azure DevOps",
+  "main": "dist/background.js",
+  "scripts": {
+    "build": "npm run build:js && npm run build:icons",
+    "build:js": "echo 'JavaScript files are already built in dist/'",
+    "build:icons": "echo 'Icon generation would happen here'",
+    "pack": "cd .. && zip -r devops-user-lookup-extension.zip devops-extension/ -x '*.git*' 'node_modules/*' '*.md'",
+    "validate": "npm run validate:manifest && npm run validate:permissions",
+    "validate:manifest": "node scripts/validate-manifest.js",
+    "validate:permissions": "node scripts/validate-permissions.js",
+    "test": "echo 'Tests would run here'",
+    "lint": "eslint dist/*.js --fix"
+  },
+  "keywords": [
+    "chrome-extension",
+    "devops",
+    "azure-devops",
+    "user-lookup",
+    "productivity"
+  ],
+  "author": "AI Dev Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lev0n82/ai-dev-qa-tasks"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  },
+  "chrome": {
+    "minimum_version": "88"
+  },
+  "webstore": {
+    "category": "productivity",
+    "language": "en",
+    "regions": ["US", "GB", "CA", "AU"]
+  }
+}
