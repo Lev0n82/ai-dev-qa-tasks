@@ -1,0 +1,43 @@
+/* Content script styles for DevOps User Lookup Extension */
+
+.user-lookup-btn {
+  margin-left: 5px !important;
+  padding: 4px 8px !important;
+  border: 1px solid #ccc !important;
+  background: #f5f5f5 !important;
+  border-radius: 3px !important;
+  cursor: pointer !important;
+  font-size: 12px !important;
+  color: #333 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.user-lookup-btn:hover {
+  background: #e8e8e8 !important;
+  border-color: #999 !important;
+}
+
+.user-lookup-btn:active {
+  background: #ddd !important;
+  transform: translateY(1px) !important;
+}
+
+.user-lookup-btn:focus {
+  outline: 2px solid #0078d4 !important;
+  outline-offset: 2px !important;
+}
+
+/* Ensure the button doesn't interfere with Azure DevOps styling */
+.user-lookup-btn * {
+  box-sizing: border-box !important;
+}
+
+/* Hide the button in print view */
+@media print {
+  .user-lookup-btn {
+    display: none !important;
+  }
+}
